@@ -1,0 +1,18 @@
+<span id="current-time"></span>
+
+<script>
+  function updateTime() {
+    const timeElement = document.getElementById("current-time");
+    if (timeElement) {
+      timeElement.textContent = new Date().toLocaleTimeString();
+    }
+  }
+
+  updateTime();
+
+  const intervalId = setInterval(updateTime, 1000);
+
+  document.addEventListener("astro:unmount", () => {
+    clearInterval(intervalId);
+  });
+</script>

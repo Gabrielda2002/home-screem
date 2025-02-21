@@ -1,11 +1,134 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import AppCard from "../components/AppCard.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Time from "../components/Time.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Nordvital IPS">
+  <main class="w-full h-screen flex">
+   
+    <div
+      class="w-1/2 bg-gradient-to-br from-teal-500 to-blue-400 relative overflow-hidden flex items-center justify-center"
+    >
+      <!-- Decoracion  -->
+      <div
+        class="absolute top-0 left-0 h-64 w-64 rounded-full bg-slate-100 opacity-40"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-white opacity-40"
+      >
+      </div>
+      <div
+        class="absolute top-1/4 right-1/4 h-20 w-20 rounded-lg bg-slate-100 opacity-30 rotate-45"
+      >
+      </div>
+      <div
+        class="absolute bottom-1/4 left-1/4 h-16 w-16 rounded-full border-4 border-white opacity-40"
+      >
+      </div>
+
+      <div
+        class="bg-white rounded-xl shadow-lg p-8 z-10 w-1/2 mx-auto text-center"
+      >
+        <h1 class="text-5xl font-bold text-slate-800">
+          Bienvenidos a
+          <span class="text-[#00A3FF] block mt-2">Nordvital IPS</span>
+        </h1>
+        <div class="flex items-center justify-center mt-4 text-gray-500">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-gray-500">
+            <Time />
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="w-1/2 bg-slate-100 p-8 overflow-y-auto">
+
+      <section class="mb-8 m-8">
+        <SectionTitle title="Aplicaciones Generales" />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <AppCard title="Correo" icon="📧" bgColor="bg-blue-50" url="#" />
+          <AppCard title="Calendario" icon="📅" bgColor="bg-green-50" url="#" />
+          <AppCard
+            title="Documentos"
+            icon="📄"
+            bgColor="bg-yellow-50"
+            url="#"
+          />
+          <AppCard
+            title="Portal RRHH"
+            icon="👥"
+            bgColor="bg-purple-50"
+            url="#"
+          />
+        </div>
+      </section>
+
+      <!-- Nueva EPS -->
+      <section class="mb-8 m-8">
+        <SectionTitle title="Aplicaciones Nueva EPS" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <AppCard
+            title="Sistema NuevaEPS"
+            icon="🏥"
+            bgColor="bg-red-50"
+            url="#"
+          />
+          <AppCard
+            title="Reportes NuevaEPS"
+            icon="📊"
+            bgColor="bg-indigo-50"
+            url="#"
+          />
+          <AppCard
+            title="Formularios NuevaEPS"
+            icon="📝"
+            bgColor="bg-pink-50"
+            url="#"
+          />
+        </div>
+      </section>
+
+      <!-- Coodsalud  -->
+      <section class="mb-8 m-8">
+        <SectionTitle title="Aplicaciones Cosalud" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <AppCard
+            title="Sistema Cosalud"
+            icon="🏥"
+            bgColor="bg-emerald-50"
+            url="#"
+          />
+          <AppCard
+            title="Reportes Cosalud"
+            icon="📊"
+            bgColor="bg-orange-50"
+            url="#"
+          />
+          <AppCard
+            title="Formularios Cosalud"
+            icon="📝"
+            bgColor="bg-cyan-50"
+            url="#"
+          />
+        </div>
+      </section>
+    </div>
+  </main>
 </Layout>
