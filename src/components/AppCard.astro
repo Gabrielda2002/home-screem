@@ -6,14 +6,14 @@ interface Props {
   url: string;
 }
 
-const { title, icon, bgColor } = Astro.props;
+const { title, icon, bgColor, url } = Astro.props;
 ---
 
 <div
-  class={`p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow w-full max-h-max ${bgColor}`}
+  class={`p-4 rounded-xl text-card-foreground shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 ${bgColor}`}
 >
-  <div class="flex flex-col items-center gap-3">
-    <span class="text-4xl">{icon}</span>
-    <span class="text-gray-700 text-sm font-medium">{title}</span>
-  </div>
+  <a href={url} class="flex flex-col items-center gap-3">
+    <span class="text-3xl">{icon}</span>
+    <span class="text-gray-800 text-md font-semibold">{title}</span>
+  </a>
 </div>
