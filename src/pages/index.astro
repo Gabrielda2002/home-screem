@@ -3,6 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import AppCard from "../components/AppCard.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import Time from "../components/Time.astro";
+
+//images
+import NuevaEps from "../images/Convenios/LOGO-NUEVA-EPS.png?url";
+import Compensar from "../images/Convenios/LOGO-COMPENSAR.png?url";
+import Coosalud from "../images/Convenios/COOSALUD.png?url";
 ---
 
 <Layout title="Nordvital IPS">
@@ -54,38 +59,38 @@ import Time from "../components/Time.astro";
         </div>
         <!-- Nordvital ips -->
         <section class="mt-5">
-          <SectionTitle title="" />
+          <SectionTitle title="" image="" />
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 justify-center text-center"
           >
             <AppCard
               title="Página Web Institucional"
               icon="👨‍💻"
-              bgColor="bg-gradient-to-br from-teal-50 to-cyan-300/70 opacity-70 hover:to-cyan-300"
+              bgColor="bg-gradient-to-br from-teal-50/60 to-cyan-300/60 hover:to-cyan-300 border border-cyan-300"
               url="https://www.nordvitalips.com/"
             />
             <AppCard
               title="Intranet"
               icon="🖥️"
-              bgColor="bg-gradient-to-br from-teal-50 to-cyan-300/70 opacity-70 hover:to-cyan-300"
+              bgColor="bg-gradient-to-br from-teal-50/60 to-cyan-300/60 hover:to-cyan-300 border border-cyan-300"
               url="https://app.nordvitalips.com"
             />
             <AppCard
               title="Sharepoint"
               icon="📑"
-              bgColor="bg-gradient-to-br from-teal-50 to-cyan-300/70 opacity-70 hover:to-cyan-300"
+              bgColor="bg-gradient-to-br from-teal-50/60 to-cyan-300/60 hover:to-cyan-300 border border-cyan-300"
               url="https://nordvitalipscucuta.sharepoint.com/sites/NORDVITAL/SitePages/Noticias-NordVital-IPS.aspx"
             />
             <AppCard
               title="Tharsis"
               icon="💻"
-              bgColor="bg-gradient-to-br from-teal-50 to-cyan-300/70 opacity-70 hover:to-cyan-300"
+              bgColor="bg-gradient-to-br from-teal-50/60 to-cyan-300/60 hover:to-cyan-300 border border-cyan-300"
               url="https://hemonet.com/lisnordvital/"
             />
             <AppCard
               title="Plenus"
               icon="👥"
-              bgColor="bg-gradient-to-br from-teal-50 to-cyan-300/70 opacity-70 hover:to-cyan-300"
+              bgColor="bg-gradient-to-br from-teal-50/60 to-cyan-300/60 hover:to-cyan-300 border border-cyan-300"
               url="https://nordvital.mdplenus.com/nordvitalips/control/ingreso#"
             />
           </div>
@@ -95,45 +100,48 @@ import Time from "../components/Time.astro";
 
     <!-- Right Section -->
     <div
-      class="w-full lg:w-2/4 bg-slate-100 p-2 lg:p-5 overflow-y-auto flex-grow"
+      class="w-full lg:w-2/4 bg-slate-100 -bg-linear-210 p-2 lg:p-2 overflow-y-auto flex-grow"
     >
-    <div class="text-2xl text-center font-serif font-semibold text-cyan-800
-    ">CONVENIOS</div>
-    <hr class="mt-2 mb-5 border-cyan-700" />
       <!-- Nueva EPS -->
       <section class="mb-6 m-4">
-        <SectionTitle title="NUEVA EPS" />
+        <SectionTitle title="" image={NuevaEps} />
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 justify-center text-center"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 justify-center text-center"
         >
           <AppCard
             title="Pana"
             icon="🅿️"
-            bgColor="bg-gradient-to-br from-blue-200 to-blue-100 opacity-80 hover:to-blue-200"
+            bgColor="bg-gradient-to-br from-sky-300/20 to-blue-300/40 hover:to-blue-300 border border-blue-200"
             url="https://10.150.201.65/pana/index.php"
           />
           <AppCard
             title="Portal Web"
             icon="🌐"
-            bgColor="bg-gradient-to-br from-blue-200 to-blue-100 opacity-80 hover:to-blue-200"
+            bgColor="bg-gradient-to-br from-sky-300/20 to-blue-300/40 hover:to-blue-300 border border-blue-200"
             url="https://portal.nuevaeps.com.co/Portal/home.jspx"
           />
           <AppCard
-            title="Progrmación Laboratorios"
+            title="Facturación"
+            icon="💳"
+            bgColor="bg-gradient-to-br from-sky-300/20 to-blue-300/40 hover:to-blue-300 border border-blue-200"
+            url="https://app.nuevaeps.com.co/#/"
+          />
+          <AppCard
+            title="Agendar Laboratorios"
             icon="🔬"
-            bgColor="bg-gradient-to-br from-blue-200 to-blue-100 opacity-80 hover:to-blue-200"
+            bgColor="bg-gradient-to-br from-sky-300/20 to-blue-300/40 hover:to-blue-300 border border-blue-200"
             url="https://nordvital.mdplenus.com/nordvital_neps/control/ingreso"
           />
           <AppCard
             title="Pana Ticket"
             icon="🎫"
-            bgColor="bg-gradient-to-br from-blue-200 to-blue-100 opacity-80 hover:to-blue-200"
+            bgColor="bg-gradient-to-br from-sky-300/20 to-blue-300/40 hover:to-blue-300 border border-blue-200"
             url="https://ticket.pana.com.co/ticket/index.php"
           />
           <AppCard
             title="Sigires"
             icon="📝"
-            bgColor="bg-gradient-to-br from-blue-200 to-blue-100 opacity-80 hover:to-blue-200"
+            bgColor="bg-gradient-to-br from-sky-300/20 to-blue-300/40 hover:to-blue-300 border border-blue-200"
             url="https://nuevaeps.sigires.co/"
           />
         </div>
@@ -141,95 +149,95 @@ import Time from "../components/Time.astro";
 
       <!-- Compensar -->
       <section class="mb-6 m-4">
-        <SectionTitle title="COMPENSAR" />
+        <SectionTitle title="" image={Compensar} />
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center text-center"
         >
           <AppCard
             title="Plenus"
             icon="👥"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
           />
           <AppCard
             title="SAPWEB"
             icon="📊"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://verticalsaludsap.compensar.com/"
           />
           <AppCard
             title="Facturación"
             icon="💳"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://consorcio.elyon.com.co/"
           />
           <AppCard
             title="Portal SAIA"
             icon="📋"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://pqrscompensarsalud.netsaia.com/views/login/login.php"
           />
           <AppCard
             title="Portal SICU"
             icon="🔒"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://sicu.compensarsalud.com/SicuWebResponsive/login"
           />
           <AppCard
             title="Portal RISS"
             icon="📑"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://cs.compensarsalud.com/CherwellPortal/GPS?_=4c62b036#0"
           />
           <AppCard
             title="Transacciones en Línea"
             icon="📲"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://corporativo.compensar.com/salud/transacciones"
           />
           <AppCard
-            title="Plataforma de aprendizaje"
+            title="Plataforma de Aprendizaje"
             icon="📚"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://proveedoressalud.clapuser.com/"
           />
           <AppCard
             title="Sigires"
             icon="📝"
-            bgColor="bg-gradient-to-br from-orange-100 to-orange-200 opacity-70 hover:to-orange-400/60"
+            bgColor="bg-gradient-to-br from-blue-300/50 to-teal-200/50 hover:to-teal-300/50 border border-cyan-200"
             url="https://compensar.sigires.co/"
           />
         </div>
       </section>
 
       <!-- Coodsalud -->
-      <section class="mb-6 m-4">
-        <SectionTitle title="COOSALUD" />
+      <section class="m-4">
+        <SectionTitle title="" image={Coosalud} />
         <div
           class="grid grid-cols-1 sm:grid-cols-4 gap-4 justify-center text-center"
         >
           <AppCard
             title="Plenus"
             icon="👥"
-            bgColor="bg-gradient-to-br from-green-100 to-green-200 opacity-70 hover:to-green-400"
+            bgColor="bg-gradient-to-br from-emerald-200/70 to-blue-200/30 hover:to-emerald-200 border border-green-200"
             url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
           />
           <AppCard
             title="Portal Afiliados"
             icon="💼"
-            bgColor="bg-gradient-to-br from-green-100 to-green-200 opacity-70 hover:to-green-400"
+            bgColor="bg-gradient-to-br from-emerald-200/70 to-blue-200/30 hover:to-emerald-200 border border-green-200"
             url="https://coosalud.com/"
           />
           <AppCard
             title="Punto fácil"
             icon="🖱️"
-            bgColor="bg-gradient-to-br from-green-100 to-green-200 opacity-70 hover:to-green-400"
+            bgColor="bg-gradient-to-br from-emerald-200/70 to-blue-200/30 hover:to-emerald-200 border border-green-200"
             url="https://portal.coosalud.com/puntofacil/"
           />
           <AppCard
             title="Portal IPS"
             icon="🏥"
-            bgColor="bg-gradient-to-br from-green-100 to-green-200 opacity-70 hover:to-green-400"
+            bgColor="bg-gradient-to-br from-emerald-200/70 to-blue-200/30 hover:to-emerald-200 border border-green-200"
             url="https://portalsalud.coosalud.com/login"
           />
         </div>
