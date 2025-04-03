@@ -12,7 +12,7 @@ const { title, icon, bgColor, url } = Astro.props;
 <div
   class={`p-2 rounded-xl text-card-foreground shadow-md hover:shadow-xl hover:scale-95 transition-all duration-300 h-auto ${bgColor}`}
 >
-  <a href={url} class="flex flex-col items-center">
+  <a href={url} class="flex flex-col items-center" target="_blank">
     <span class="text-xl">{icon}</span>
     <span class="relative text-white text-sm font-semibol">{title}</span>
   </a>
