@@ -8,10 +8,11 @@ import Time from "../components/Time.astro";
 import NuevaEps from "../images/Convenios/LOGO-NUEVA-EPS.png?url";
 import Compensar from "../images/Convenios/LOGO-COMPENSAR.png?url";
 import Coosalud from "../images/Convenios/COOSALUD.png?url";
+import Famisanar from "../images/Convenios/famisanar-icon.png?url";
 ---
 
 <Layout title="Nordvital IPS">
-  <main class="w-full h-screen min-h-auto flex flex-col lg:flex-row">
+  <main class="w-full h-screen min-h-auto flex flex-col lg:flex-row ">
     <!-- Left Section -->
     <div
       class="w-full lg:w-1/2 bg-gradient-to-br from-teal-500 to-blue-400 relative overflow-hidden flex items-center justify-center p-4"
@@ -87,11 +88,66 @@ import Coosalud from "../images/Convenios/COOSALUD.png?url";
               bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
               url="https://hemonet.com/lisnordvital/"
             />
-            <AppCard
+            <AppCard 
               title="Plenus"
               icon="👥"
               bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
               url="https://nordvital.mdplenus.com/nordvitalips/control/ingreso#"
+            />
+          </div>
+        </section>
+
+        <!-- Enlaces de interes -->
+        <section class="mt-12">
+          <SectionTitle title="Enlaces de interes" />
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 justify-center text-center mt-5">
+            <AppCard
+              title="ADRESS"
+              icon="📧"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://www.adres.gov.co/consulte-su-eps"
+            />
+            <AppCard
+              title="REPS"
+              icon="💬"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://prestadores.minsalud.gov.co/habilitacion/"
+            />
+            <AppCard
+              title="Minsalud"
+              icon="☁️"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://www.minsalud.gov.co/Portada/index.html"
+            />
+            <AppCard
+              title="Mipres"
+              icon="📝"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx?ReturnUrl=%2fMIPRESNOPBS"
+            />
+            <AppCard
+              title="Rethus"
+              icon="📝"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://www.sispro.gov.co/central-prestadores-de-servicios/Pages/ReTHUS-Registro-de-Talento-Humano-en-Salud.aspx"
+            />
+            <AppCard
+              title="Sispro"
+              icon="📝"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://web.sispro.gov.co/"
+            />
+            <AppCard
+              title="FEVRIPS"
+              icon="📝"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://www.sispro.gov.co/central-financiamiento/Pages/facturacion-electronica.aspx"
+            />
+            <AppCard
+              title="INS"
+              icon="📝"
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://www.ins.gov.co/Paginas/Inicio.aspx"
             />
           </div>
         </section>
@@ -242,6 +298,27 @@ import Coosalud from "../images/Convenios/COOSALUD.png?url";
           />
         </div>
       </section>
+
+      <!-- Famisanar -->
+       <section class="p-4">
+        <SectionTitle title="" image={Famisanar} />
+        <div
+          class="grid grid-cols-1 sm:grid-cols-4 gap-4 justify-center text-center"
+        >
+          <AppCard
+            title="Plenus"
+            icon="👥"
+            bgColor="bg-[#0056B3]/80 hover:bg-[#6E8ED8]"
+            url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
+          />
+          <AppCard
+            title="Portal Web"
+            icon="💼"
+            bgColor="bg-[#0056B3]/80 hover:bg-[#6E8ED8]"
+            url="https://verificador.famisanar.com.co/public/login?_gl=1*12zszy1*_gcl_au*NTIyMDAxMzQuMTc1NzcxMjk1Mg"
+          />
+        </div>
+       </section>
     </div>
   </main>
 </Layout>
