@@ -9,6 +9,8 @@ import NuevaEps from "../images/Convenios/LOGO-NUEVA-EPS.png?url";
 import Compensar from "../images/Convenios/LOGO-COMPENSAR.png?url";
 import Coosalud from "../images/Convenios/COOSALUD.png?url";
 import Famisanar from "../images/Convenios/famisanar-icon.png?url";
+import iconCI from "../assets/logo.webp"
+import iconCO from "../assets/favicon.png"
 ---
 
 <Layout title="Nordvital IPS">
@@ -17,9 +19,9 @@ import Famisanar from "../images/Convenios/famisanar-icon.png?url";
     <div
       class="w-full lg:w-1/2 bg-gradient-to-br from-teal-500 to-blue-400 relative overflow-y-auto  flex md:items-center md:justify-center p-4"
     >
-      <!-- Decoration -->
+      <!-- Deco ration -->
       <div
-        class="absolute top-0 left-0 h-60 w-60 rounded-full bg-slate-100 opacity-20"
+        class="absolute top-0 left-0 h-60 w-60 rounded-full bg-slate-100 opacity-20"  
       >
       </div>
       <div
@@ -62,13 +64,19 @@ import Famisanar from "../images/Convenios/famisanar-icon.png?url";
         <section class="mt-5">
           <SectionTitle title="" image="" />
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 justify-center text-center"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center text-center"
           >
             <AppCard
               title="Página Web Institucional"
-              icon="👨‍💻"
+              icon={iconCO}
               bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
               url="https://www.nordvitalips.com/"
+            />
+            <AppCard
+              title="Instituto de Investigación Nordvital"
+              icon={iconCI}
+              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
+              url="https://www.investigation.nordvitalips.com/"
             />
             <AppCard
               title="Intranet"
@@ -180,7 +188,7 @@ import Famisanar from "../images/Convenios/famisanar-icon.png?url";
             title="Pana"
             icon="🅿️"
             bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://10.150.101.65/pana/p_login.php"
+            url="https://10.200.11.53/pana/index.php"
           />
           <AppCard
             title="Portal Web"
