@@ -14,31 +14,60 @@ interface Props {
 }
 
 const { title, icon, bgColor, url } = Astro.props;
-
+const isEps = bgColor.includes("eps-card");
 const isImageObject = typeof icon === "object" && icon !== null && "src" in icon;
 const iconSrc = isImageObject ? icon.src : icon;
 const isImageIcon =
   isImageObject ||
   /^(https?:\/\/|\/|\.\.?\/)/.test(iconSrc) ||
   /\.(png|jpe?g|gif|svg|webp|ico)(\?.*)?$/i.test(iconSrc);
+
+const svg = (body: string, size = "w-3.5 h-3.5") =>
+  `<svg class="${size} text-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">${body}</svg>`;
+const svgIcons: Record<string, string> = {
+  Intranet: svg('<rect height="14" rx="2" width="20" x="2" y="3"/><path d="M8 21h8M12 17v4"/>', "w-4 h-4 sm:w-5 sm:h-5"),
+  Sharepoint: svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/>', "w-4 h-4 sm:w-5 sm:h-5"),
+  Tharsis: svg('<rect height="12" rx="2" width="18" x="3" y="4"/><path d="M7 20h10M9 16v4m6-4v4"/><circle cx="12" cy="10" r="2"/>', "w-4 h-4 sm:w-5 sm:h-5"),
+  Plenus: svg('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>', "w-4 h-4"),
+  ADRESS: svg('<rect height="14" rx="2" width="20" x="2" y="5"/><path d="M2 10h20"/>'),
+  REPS: svg('<path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 8h1m-1 4h1m-1 4h1m4-8h1m-1 4h1m-1 4h1"/>'),
+  Minsalud: svg('<path d="M12 2v20M2 12h20"/>'),
+  Mipres: svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M12 18v-6m-3 3h6"/>'),
+  Rethus: svg('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/>'),
+  Sispro: svg('<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>'),
+  FEVRIPS: svg('<path d="M4 4h16v16H4zM4 9h16M9 4v16"/>'),
+  INS: svg('<path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/>'),
+  POSpopuli: svg('<circle cx="12" cy="12" r="9"/><path d="M12 8v8m-4-4h8"/>'),
+  Supersalud: svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+  Pana: svg('<rect height="16" rx="2" width="16" x="4" y="4"/><path d="M9 16V8h4a2 2 0 1 1 0 4H9"/>'),
+  "Portal Web": svg('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>'),
+  Facturación: svg('<rect height="14" rx="2" width="20" x="2" y="5"/><path d="M2 10h20m-16 5h2"/>'),
+  "Agendar Laboratorios": svg('<path d="M10 2v7l-6 9h16l-6-9V2M8 2h8M7 16h10"/>'),
+  "Pana Ticket": svg('<rect height="16" rx="2" width="18" x="3" y="4"/><path d="M7 8h10m-10 4h10m-10 4h5"/>'),
+  Sigires: svg('<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2zM12 11v6m-3-3h6"/>'),
+  SAPWEB: svg('<path d="M18 20V10M12 20V4M6 20v-6"/>'),
+  "Portal SAIA": svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8m-8 4h8"/>'),
+  "Portal SICU": svg('<rect height="11" rx="2" width="18" x="3" y="11"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'),
+  "Portal RISS": svg('<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>'),
+  "Transacciones en Línea": svg('<rect height="14" rx="2" width="20" x="2" y="3"/><path d="M8 21h8m-4-4v4"/>', "w-4 h-4 sm:w-5 sm:h-5"),
+  "Plataforma de Aprendizaje": svg('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>'),
+  "Portal Afiliados": svg('<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'),
+  "Punto fácil": svg('<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>'),
+  "Portal IPS": svg('<rect height="18" rx="2" width="18" x="3" y="3"/><path d="M12 8v8m-4-4h8"/>')
+};
+const svgContent = typeof icon === "string" ? svgIcons[title] || svgIcons[icon] : null;
+const renderedSvg = isEps ? svgContent?.replace(/class="[^"]*"/, 'class="w-[18px] h-[18px] text-current"') : svgContent;
 ---
 
-<div
-  class={`p-2 rounded-xl text-card-foreground shadow-md hover:shadow-xl hover:scale-95 transition-all duration-300 h-auto ${bgColor}`}
->
-  <a href={url} class="flex flex-col items-center" target="_blank">
-    {
-      isImageIcon ? (
-        <img
-          src={iconSrc}
-          alt={title}
-          class="w-8 h-8 object-contain"
-          loading="lazy"
-        />
-      ) : (
-        <span class="text-xl">{iconSrc}</span>
-      )
-    }
-    <span class="relative text-white text-sm font-semibol">{title}</span>
+<div class={`app-card ${bgColor}`}>
+  <a href={url} class="flex h-full flex-col items-center justify-center gap-1 text-center" target="_blank">
+    {renderedSvg ? (
+      <Fragment set:html={renderedSvg} />
+    ) : isImageIcon ? (
+      <img src={iconSrc} alt={title} class="h-8 w-8 object-contain" loading="lazy" />
+    ) : (
+      <span class="text-xl">{iconSrc}</span>
+    )}
+    <span class="card-title">{title}</span>
   </a>
 </div>

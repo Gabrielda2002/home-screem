@@ -3,348 +3,101 @@ import Layout from "../layouts/Layout.astro";
 import AppCard from "../components/AppCard.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import Time from "../components/Time.astro";
-
-//images
 import NuevaEps from "../images/Convenios/LOGO-NUEVA-EPS.png?url";
 import Compensar from "../images/Convenios/LOGO-COMPENSAR.png?url";
 import Coosalud from "../images/Convenios/COOSALUD.png?url";
 import Famisanar from "../images/Convenios/famisanar-icon.png?url";
-import iconCI from "../assets/logo.webp"
-import iconCO from "../assets/favicon.png"
+import logoNordvital from "../assets/logo.webp";
+import faviconPng from "../assets/favicon.png";
 ---
 
 <Layout title="Nordvital IPS">
-  <main class="w-full h-screen min-h-auto flex flex-col lg:flex-row ">
-    <!-- Left Section -->
-    <div
-      class="w-full lg:w-1/2 bg-gradient-to-br from-teal-500 to-blue-400 relative overflow-y-auto  flex md:items-center md:justify-center p-4"
-    >
-      <!-- Deco ration -->
-      <div
-        class="absolute top-0 left-0 h-60 w-60 rounded-full bg-slate-100 opacity-20"  
-      >
-      </div>
-      <div
-        class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-white opacity-20"
-      >
-      </div>
-      <div
-        class="absolute top-1/6 right-1/4 h-20 w-20 rounded-lg bg-slate-100 opacity-20 rotate-45"
-      >
-      </div>
-      <div
-        class="absolute bottom-1/7 left-1/4 h-24 w-24 rounded-full border-4 border-white opacity-30"
-      >
-      </div>
+  <main class="relative grid min-h-screen w-full grid-cols-1 overflow-visible shadow-2xl lg:h-screen lg:grid-cols-2 lg:overflow-hidden">
+    <section class="relative flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#00b4d8] via-[#0096c7] to-[#0077b6] p-3 text-white sm:p-5 lg:p-6">
+      <div class="pointer-events-none absolute inset-0 -z-10 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.3) 1px, transparent 0); background-size: 32px 32px"></div>
+      <div class="pointer-events-none absolute -left-10 -top-10 z-0 h-80 w-80 animate-blob rounded-full bg-teal-300/30 blur-3xl"></div>
+      <div class="animation-delay-2 pointer-events-none absolute -right-10 bottom-0 z-0 h-72 w-72 animate-blob rounded-full bg-cyan-200/25 blur-3xl"></div>
 
-      <div class="p-9 z-10 max-w-[95%] mx-auto text-center">
-        <h1 class="text-4xl lg:text-6xl font-bold text-slate-800 mt-6">
-          Bienvenidos a
-          <span class="text-[#ffffff] block mt-">Nordvital IPS</span>
-        </h1>
-        <div class="flex items-center justify-center mt-4 text-gray-200">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 mr-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          <p class="text-gray-200">
-            <Time />
-          </p>
+      <div class="relative z-10 mx-auto mt-1 flex w-full max-w-2xl flex-col items-center text-center">
+        <h1 class="mb-1.5 text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-sm sm:text-3xl lg:text-[34px]">Bienvenidos a<br /><span class="drop-shadow-md">Nordvital IPS</span></h1>
+        <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/20 px-3 py-1 text-sm font-medium tracking-wide text-white shadow-sm backdrop-blur-md">
+          <svg class="h-3.5 w-3.5 text-cyan-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span class="font-mono text-xs tracking-widest sm:text-sm"><Time /></span>
         </div>
-        <!-- Nordvital ips -->
-        <section class="mt-5">
-          <SectionTitle title="" image="" />
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center text-center"
-          >
-            <AppCard
-              title="Página Web Institucional"
-              icon={iconCO}
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.nordvitalips.com/"
-            />
-            <AppCard
-              title="Instituto de Investigación Nordvital"
-              icon={iconCI}
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.investigation.nordvitalips.com/"
-            />
-            <AppCard
-              title="Intranet"
-              icon="🖥️"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://app.nordvitalips.com"
-            />
-            <AppCard
-              title="Sharepoint"
-              icon="📑"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://nordvitalipscucuta.sharepoint.com/sites/NORDVITAL/SitePages/Noticias-NordVital-IPS.aspx"
-            />
-            <AppCard
-              title="Tharsis"
-              icon="💻"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://hemonet.com/lisnordvital/"
-            />
-            <AppCard 
-              title="Plenus"
-              icon="👥"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
-            />
-          </div>
-        </section>
-
-        <!-- Enlaces de interes -->
-        <section class="mt-12">
-          <SectionTitle title="Enlaces de interes" />
-          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 justify-center text-center mt-5">
-            <AppCard
-              title="ADRESS"
-              icon="📧"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.adres.gov.co/consulte-su-eps"
-            />
-            <AppCard
-              title="REPS"
-              icon="💬"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://prestadores.minsalud.gov.co/habilitacion/"
-            />
-            <AppCard
-              title="Minsalud"
-              icon="☁️"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.minsalud.gov.co/Portada/index.html"
-            />
-            <AppCard
-              title="Mipres"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx?ReturnUrl=%2fMIPRESNOPBS"
-            />
-            <AppCard
-              title="Rethus"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.sispro.gov.co/central-prestadores-de-servicios/Pages/ReTHUS-Registro-de-Talento-Humano-en-Salud.aspx"
-            />
-            <AppCard
-              title="Sispro"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://web.sispro.gov.co/"
-            />
-            <AppCard
-              title="FEVRIPS"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.sispro.gov.co/central-financiamiento/Pages/facturacion-electronica.aspx"
-            />
-            <AppCard
-              title="INS"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.ins.gov.co/Paginas/Inicio.aspx"
-            />
-            <AppCard
-              title="POSpopuli"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://pospopuli.minsalud.gov.co/PospopuliWeb/paginas/home.aspx"
-            />
-            <AppCard
-              title="Supersalud"
-              icon="📝"
-              bgColor="bg-gradient-to-br from-teal-200/40 to-cyan-400/80 hover:to-cyan-400"
-              url="https://www.supersalud.gov.co/es-co"
-            />
-          </div>
-        </section>
+        <div class="mb-2 grid w-full grid-cols-3 gap-2" data-purpose="primary-actions-grid">
+          <AppCard title="Página Web Institucional" icon={faviconPng} bgColor="glass-card" url="https://www.nordvitalips.com/" />
+          <AppCard title="Instituto de Investigación Nordvital" icon={logoNordvital} bgColor="glass-card" url="https://www.investigation.nordvitalips.com/" />
+          <AppCard title="Intranet" icon={faviconPng} bgColor="glass-card" url="https://app.nordvitalips.com" />
+          <AppCard title="Sharepoint" icon="Sharepoint" bgColor="glass-card" url="https://nordvitalipscucuta.sharepoint.com/sites/NORDVITAL/SitePages/Noticias-NordVital-IPS.aspx" />
+          <AppCard title="Tharsis" icon="Tharsis" bgColor="glass-card" url="https://hemonet.com/lisnordvital/" />
+          <AppCard title="Plenus" icon="Plenus" bgColor="glass-card" url="https://nordvital.mdplenus.com/nordvital/control/ingreso" />
+        </div>
       </div>
-    </div>
 
-    <!-- Right Section -->
-    <div
-      class="w-full lg:w-2/4 bg-slate-100 -bg-linear-210 p-2 lg:p-2 overflow-y-auto flex-grow"
-    >
-      <!-- Nueva EPS -->
-      <section class="mb-6 m-4">
+      <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center">
+        <h2 class="mb-1.5 text-sm font-extrabold tracking-tight text-white/90 sm:text-base">Enlaces de interés</h2>
+        <div class="grid w-full grid-cols-5 gap-1.5" data-purpose="interest-links-grid">
+          <AppCard title="ADRESS" icon="ADRESS" bgColor="glass-sub-card" url="https://www.adres.gov.co/consulte-su-eps" />
+          <AppCard title="REPS" icon="REPS" bgColor="glass-sub-card" url="https://prestadores.minsalud.gov.co/habilitacion/" />
+          <AppCard title="Minsalud" icon="Minsalud" bgColor="glass-sub-card" url="https://www.minsalud.gov.co/Portada/index.html" />
+          <AppCard title="Mipres" icon="Mipres" bgColor="glass-sub-card" url="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx?ReturnUrl=%2fMIPRESNOPBS" />
+          <AppCard title="Rethus" icon="Rethus" bgColor="glass-sub-card" url="https://www.sispro.gov.co/central-prestadores-de-servicios/Pages/ReTHUS-Registro-de-Talento-Humano-en-Salud.aspx" />
+          <AppCard title="Sispro" icon="Sispro" bgColor="glass-sub-card" url="https://web.sispro.gov.co/" />
+          <AppCard title="FEVRIPS" icon="FEVRIPS" bgColor="glass-sub-card" url="https://www.sispro.gov.co/central-financiamiento/Pages/facturacion-electronica.aspx" />
+          <AppCard title="INS" icon="INS" bgColor="glass-sub-card" url="https://www.ins.gov.co/Paginas/Inicio.aspx" />
+          <AppCard title="POSpopuli" icon="POSpopuli" bgColor="glass-sub-card" url="https://pospopuli.minsalud.gov.co/PospopuliWeb/paginas/home.aspx" />
+          <AppCard title="Supersalud" icon="Supersalud" bgColor="glass-sub-card" url="https://www.supersalud.gov.co/es-co" />
+        </div>
+      </div>
+    </section>
+
+    <section class="relative flex min-h-screen flex-col justify-evenly overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50/40 to-slate-100 p-2 sm:p-4 lg:h-screen">
+      <div class="pointer-events-none absolute right-10 top-10 h-96 w-96 animate-blob rounded-full bg-blue-200/20 blur-3xl"></div>
+      <div class="animation-delay-4 pointer-events-none absolute bottom-10 left-0 h-80 w-80 animate-blob rounded-full bg-emerald-200/20 blur-3xl"></div>
+
+      <section class="relative z-10 flex w-full flex-col">
         <SectionTitle title="" image={NuevaEps} />
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 justify-center text-center"
-        >
-          <AppCard
-            title="Pana"
-            icon="🅿️"
-            bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://10.200.11.53/pana/index.php"
-          />
-          <AppCard
-            title="Portal Web"
-            icon="🌐"
-            bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://portal.nuevaeps.com.co/Portal/home.jspx"
-          />
-          <AppCard
-            title="Facturación"
-            icon="💳"
-            bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://app.nuevaeps.com.co/#/"
-          />
-          <AppCard
-            title="Agendar Laboratorios"
-            icon="🔬"
-            bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
-          />
-          <AppCard
-            title="Pana Ticket"
-            icon="🎫"
-            bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://ticket.pana.com.co/ticket/index.php"
-          />
-          <AppCard
-            title="Sigires"
-            icon="📝"
-            bgColor="bg-[#007AD8]/80 hover:bg-[#6FBFEF]"
-            url="https://nuevaeps.sigires.co/"
-          />
+        <div class="grid grid-cols-3 gap-1.5">
+          <AppCard title="Pana" icon="Pana" bgColor="eps-card eps-nueva" url="https://10.200.11.53/pana/index.php" />
+          <AppCard title="Portal Web" icon="Portal Web" bgColor="eps-card eps-nueva" url="https://portal.nuevaeps.com.co/Portal/home.jspx" />
+          <AppCard title="Facturación" icon="Facturación" bgColor="eps-card eps-nueva" url="https://app.nuevaeps.com.co/#/" />
+          <AppCard title="Agendar Laboratorios" icon="Agendar Laboratorios" bgColor="eps-card eps-nueva" url="https://nordvital.mdplenus.com/nordvital/control/ingreso" />
+          <AppCard title="Pana Ticket" icon="Pana Ticket" bgColor="eps-card eps-nueva" url="https://ticket.pana.com.co/ticket/index.php" />
+          <AppCard title="Sigires" icon="Sigires" bgColor="eps-card eps-nueva" url="https://nuevaeps.sigires.co/" />
         </div>
       </section>
-
-      <!-- Compensar -->
-      <section class="mb-6 m-4">
+      <section class="relative z-10 mt-1 flex w-full flex-col">
         <SectionTitle title="" image={Compensar} />
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center text-center"
-        >
-          <AppCard
-            title="Plenus"
-            icon="👥"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
-          />
-          <AppCard
-            title="SAPWEB"
-            icon="📊"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://verticalsaludsap.compensar.com/"
-          />
-          <AppCard
-            title="Facturación"
-            icon="💳"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://consorcio.elyon.com.co/"
-          />
-          <AppCard
-            title="Portal SAIA"
-            icon="📋"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://pqrscompensarsalud.netsaia.com/views/login/login.php"
-          />
-          <AppCard
-            title="Portal SICU"
-            icon="🔒"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://sicu.compensarsalud.com/SicuWebResponsive/login"
-          />
-          <AppCard
-            title="Portal RISS"
-            icon="📑"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://cs.compensarsalud.com/CherwellPortal/GPS?_=4c62b036#0"
-          />
-          <AppCard
-            title="Transacciones en Línea"
-            icon="📲"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://corporativo.compensar.com/salud/transacciones"
-          />
-          <AppCard
-            title="Plataforma de Aprendizaje"
-            icon="📚"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://proveedoressalud.clapuser.com/"
-          />
-          <AppCard
-            title="Sigires"
-            icon="📝"
-            bgColor="bg-[#F4631A]/80 hover:bg-[#F58760]"
-            url="https://compensar.sigires.co/"
-          />
+        <div class="grid grid-cols-3 gap-1.5">
+          <AppCard title="Plenus" icon="Plenus" bgColor="eps-card eps-compensar" url="https://nordvital.mdplenus.com/nordvital/control/ingreso" />
+          <AppCard title="SAPWEB" icon="SAPWEB" bgColor="eps-card eps-compensar" url="https://verticalsaludsap.compensar.com/" />
+          <AppCard title="Facturación" icon="Facturación" bgColor="eps-card eps-compensar" url="https://consorcio.elyon.com.co/" />
+          <AppCard title="Portal SAIA" icon="Portal SAIA" bgColor="eps-card eps-compensar" url="https://pqrscompensarsalud.netsaia.com/views/login/login.php" />
+          <AppCard title="Portal SICU" icon="Portal SICU" bgColor="eps-card eps-compensar" url="https://sicu.compensarsalud.com/SicuWebResponsive/login" />
+          <AppCard title="Portal RISS" icon="Portal RISS" bgColor="eps-card eps-compensar" url="https://cs.compensar.com/CherwellPortal/GPS?_=4c62b036#0" />
+          <AppCard title="Transacciones en Línea" icon="Transacciones en Línea" bgColor="eps-card eps-compensar" url="https://corporativo.compensar.com/salud/transacciones" />
+          <AppCard title="Plataforma de Aprendizaje" icon="Plataforma de Aprendizaje" bgColor="eps-card eps-compensar" url="https://proveedoressalud.clapuser.com/" />
+          <AppCard title="Sigires" icon="Sigires" bgColor="eps-card eps-compensar" url="https://compensar.sigires.co/" />
         </div>
       </section>
-
-      <!-- Coodsalud -->
-      <section class="m-4">
+      <section class="relative z-10 mt-1 flex w-full flex-col">
         <SectionTitle title="" image={Coosalud} />
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center text-center"
-        >
-          <AppCard
-            title="Plenus"
-            icon="👥"
-            bgColor="bg-[#00C040]/80 hover:bg-[#6ED89E]"
-            url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
-          />
-          <AppCard
-            title="Portal Afiliados"
-            icon="💼"
-            bgColor="bg-[#00C040]/80 hover:bg-[#6ED89E]"
-            url="https://coosalud.com/"
-          />
-          <AppCard
-            title="Punto fácil"
-            icon="🖱️"
-            bgColor="bg-[#00C040]/80 hover:bg-[#6ED89E]"
-            url="https://portal.coosalud.com/puntofacil/"
-          />
-          <AppCard
-            title="Portal IPS"
-            icon="🏥"
-            bgColor="bg-[#00C040]/80 hover:bg-[#6ED89E]"
-            url="https://portalsalud.coosalud.com/login"
-          />
+        <div class="grid grid-cols-3 gap-1.5">
+          <AppCard title="Plenus" icon="Plenus" bgColor="eps-card eps-coosalud" url="https://nordvital.mdplenus.com/nordvital/control/ingreso" />
+          <AppCard title="Portal Afiliados" icon="Portal Afiliados" bgColor="eps-card eps-coosalud" url="https://coosalud.com/" />
+          <AppCard title="Punto fácil" icon="Punto fácil" bgColor="eps-card eps-coosalud" url="https://portal.coosalud.com/puntofacil/" />
+          <AppCard title="Portal IPS" icon="Portal IPS" bgColor="eps-card eps-coosalud" url="https://portalsalud.coosalud.com/login" />
+          <AppCard title="Sigires" icon="Sigires" bgColor="eps-card eps-coosalud" url="https://coosalud.sigires.co/" />
         </div>
       </section>
-
-      <!-- Famisanar -->
-       <section class="p-4">
+      <section class="relative z-10 mt-1 flex w-full flex-col">
         <SectionTitle title="" image={Famisanar} />
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center text-center"
-        >
-          <AppCard
-            title="Plenus"
-            icon="👥"
-            bgColor="bg-[#0056B3]/80 hover:bg-[#6E8ED8]"
-            url="https://nordvital.mdplenus.com/nordvital/control/ingreso"
-          />
-          <AppCard
-            title="Portal Web"
-            icon="💼"
-            bgColor="bg-[#0056B3]/80 hover:bg-[#6E8ED8]"
-            url="https://enlinea.famisanar.com.co/Portal/home.jspx" 
-          />
-          <AppCard
-            title="Sigires"
-            icon="📝"
-            bgColor="bg-[#0056B3]/80 hover:bg-[#6E8ED8]"
-            url="https://famisanar.sigires.co/"
-          />
+        <div class="grid grid-cols-3 gap-1.5">
+          <AppCard title="Plenus" icon="Plenus" bgColor="eps-card eps-famisanar" url="https://nordvital.mdplenus.com/nordvital/control/ingreso" />
+          <AppCard title="Portal Web" icon="Portal Web" bgColor="eps-card eps-famisanar" url="https://enlinea.famisanar.com.co/Portal/home.jspx" />
+          <AppCard title="Sigires" icon="Sigires" bgColor="eps-card eps-famisanar" url="https://famisanar.sigires.co/" />
         </div>
-       </section>
-    </div>
+      </section>
+    </section>
   </main>
 </Layout>
