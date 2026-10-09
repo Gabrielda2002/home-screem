@@ -11,41 +11,32 @@
     box-shadow: var(--card-shadow, 0 4px 14px rgba(0,0,0,.12));
     color: var(--card-color, white);
     cursor: pointer;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    transition: background .28s, border-color .28s, box-shadow .28s;
+    transition: transform .22s ease, box-shadow .22s ease;
   }
-  .app-card::before {
-    position: absolute;
-    inset: 0;
-    left: -100%;
-    z-index: 1;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
-    content: "";
-    pointer-events: none;
-    transition: left .6s ease;
-  }
-  .app-card:hover::before { left: 100%; }
-  .app-card > a { position: relative; z-index: 2; padding: .5rem .25rem; transition: transform .28s; }
-  .app-card:hover > a { transform: translateY(-2px); }
-  .card-title { color: var(--card-color, white); font-size: 11px; font-weight: 600; line-height: 1.15; }
-  .glass-card { --card-bg: rgba(255,255,255,.1); --card-border: rgba(255,255,255,.3); }
-  .glass-card:hover { --card-bg: rgba(255,255,255,.2); --card-border: rgba(255,255,255,.5); }
-  .glass-sub-card { --card-bg: rgba(255,255,255,.1); --card-border: rgba(255,255,255,.25); --card-shadow: 0 2px 8px rgba(0,0,0,.1); }
+  .app-card > a { position: relative; z-index: 2; padding: .5rem .25rem; }
+  .card-title { color: var(--card-color, white); font-size: 14px; font-weight: 600; line-height: 1.2; }
+  .glass-card, .glass-sub-card, .eps-card { --card-color: #075985; --card-bg: #fff; --card-border: #bae6fd; --card-shadow: 0 4px 14px rgba(0,0,0,.12); }
+  .glass-card:hover, .glass-sub-card:hover, .eps-card:hover { transform: translateY(-3px) scale(1.02); }
+  .glass-card:hover, .glass-sub-card:hover { box-shadow: 0 10px 20px rgba(15,23,42,.22); }
+  .glass-card:active, .glass-sub-card:active, .eps-card:active { transform: translateY(-1px) scale(1); }
+  .glass-sub-card { --card-shadow: 0 2px 8px rgba(0,0,0,.1); }
   .glass-sub-card > a { min-height: 48px; padding: .375rem .25rem; }
-  .glass-sub-card .card-title { font-size: 12px; }
-  .glass-sub-card:hover { --card-bg: rgba(255,255,255,.2); --card-border: rgba(255,255,255,.4); }
-  .eps-card { --eps-color: 2,132,199; --card-color: #0369a1; --card-bg: rgba(var(--eps-color),.08); --card-border: rgba(var(--eps-color),.2); --card-shadow: 0 4px 14px rgba(var(--eps-color),.05), inset 0 1px 1px rgba(255,255,255,.6); }
-  .eps-card:hover { --card-bg: rgba(var(--eps-color),.15); --card-border: rgba(var(--eps-color),.4); --card-shadow: 0 8px 20px rgba(var(--eps-color),.15), inset 0 1px 2px rgba(255,255,255,.8); }
-  .eps-compensar { --eps-color: 243,107,33; --card-color: #c2410c; }
-  .eps-coosalud { --eps-color: 16,185,129; --card-color: #047857; }
-  .eps-famisanar { --eps-color: 25,118,210; --card-color: #1e40af; }
+  .glass-sub-card .card-title, .eps-card .card-title { font-size: 15px; }
   .eps-card > a { min-height: 40px; padding: .25rem; }
-  .eps-card .card-title { font-size: 12px; }
+  .eps-card { border-color: transparent; box-shadow: 0 4px 10px rgba(15, 23, 42, .2); }
+  .eps-card:hover { box-shadow: 0 10px 20px rgba(15, 23, 42, .28); }
   .section-title:empty { display: none; }
   .eps-logo { display: block; width: 140px; height: 40px; margin-bottom: .25rem; object-fit: contain; }
   main > section:nth-of-type(2) > section:nth-of-type(2) .eps-logo { width: 155px; height: 44px; }
 }
+
+.eps-card { --card-color: #fff; }
+.eps-card.eps-nueva { --card-bg: #0284c7; }
+.eps-card.eps-compensar { --card-bg: #f36b21; }
+.eps-card.eps-coosalud { --card-bg: #71bf44; }
+.eps-card.eps-famisanar { --card-bg: #1976d2; }
+
+main > section:first-child .app-card { border-color: transparent; }
 
 html, body { min-height: 100%; }
 body { overflow-x: hidden; overflow-y: auto; }
@@ -62,3 +53,75 @@ body { overflow-x: hidden; overflow-y: auto; }
 .animate-blob { animation: blob 12s infinite ease-in-out; }
 .animation-delay-2 { animation-delay: 2s; }
 .animation-delay-4 { animation-delay: 4s; }
+
+@keyframes portal-gradient-drift {
+  0%, 100% { background-position: 0% 20%; }
+  50% { background-position: 100% 80%; }
+}
+@keyframes portal-tide-drift {
+  0%, 100% { background-position: 100% 80%; }
+  50% { background-position: 0% 20%; }
+}
+@keyframes portal-tide-wash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: .62; }
+}
+@keyframes portal-light-sweep {
+  0%, 100% { transform: translate(-25%, -15%) scale(1); opacity: .3; }
+  50% { transform: translate(25%, 20%) scale(1.35); opacity: .6; }
+}
+@keyframes portal-sphere-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -34px) scale(1.1); }
+  66% { transform: translate(-18px, 18px) scale(.92); }
+}
+
+.portal-login-animated-bg {
+  background-image: linear-gradient(135deg, #021c1a 0%, #07534d 25%, #087c73 50%, #119b89 75%, #3bc9ae 100%);
+  background-size: 400% 400%;
+  animation: portal-gradient-drift 9s ease-in-out infinite;
+}
+.portal-tide-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(135deg, #012521 0%, #075f57 35%, #13a58f 65%, #75e6ca 100%);
+  background-size: 300% 300%;
+  animation: portal-tide-drift 11s ease-in-out infinite, portal-tide-wash 7s ease-in-out infinite;
+}
+.portal-light-sweep {
+  position: absolute;
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, rgba(139, 243, 249, .42), transparent 58%);
+  mix-blend-mode: screen;
+  animation: portal-light-sweep 9s ease-in-out infinite;
+}
+.portal-sphere {
+  position: absolute;
+  z-index: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 32% 30%, rgba(255,255,255,.98), rgba(139,243,249,.78) 42%, rgba(8,124,115,.3) 72%, transparent 100%);
+  box-shadow: 0 0 24px rgba(139,243,249,.42), inset -5px -7px 12px rgba(2,28,26,.18);
+  animation: portal-sphere-float 9s ease-in-out infinite;
+  will-change: transform;
+}
+.portal-sphere-one { top: 12%; left: 18%; width: 86px; height: 86px; }
+.portal-sphere-two { top: 68%; left: 8%; width: 52px; height: 52px; animation-delay: .6s; animation-duration: 7s; }
+.portal-sphere-three { top: 22%; left: 82%; width: 68px; height: 68px; animation-delay: 1.2s; animation-duration: 11s; }
+.portal-sphere-four { top: 78%; left: 72%; width: 96px; height: 96px; animation-delay: .3s; animation-duration: 13s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-login-animated-bg,
+  .portal-tide-layer,
+  .portal-light-sweep,
+  .portal-sphere {
+    animation: none !important;
+    transform: none !important;
+  }
+}

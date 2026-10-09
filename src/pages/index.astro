@@ -13,13 +13,19 @@ import faviconPng from "../assets/favicon.png";
 
 <Layout title="Nordvital IPS">
   <main class="relative grid min-h-screen w-full grid-cols-1 overflow-visible shadow-2xl lg:h-screen lg:grid-cols-2 lg:overflow-hidden">
-    <section class="relative flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#00b4d8] via-[#0096c7] to-[#0077b6] p-3 text-white sm:p-5 lg:p-6">
+    <section class="portal-login-animated-bg relative flex flex-col justify-between overflow-hidden p-3 text-white sm:p-5 lg:p-6">
       <div class="pointer-events-none absolute inset-0 -z-10 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.3) 1px, transparent 0); background-size: 32px 32px"></div>
+      <div class="portal-tide-layer" aria-hidden="true"></div>
+      <div class="portal-light-sweep" aria-hidden="true"></div>
+      <div class="portal-sphere portal-sphere-one" aria-hidden="true"></div>
+      <div class="portal-sphere portal-sphere-two" aria-hidden="true"></div>
+      <div class="portal-sphere portal-sphere-three" aria-hidden="true"></div>
+      <div class="portal-sphere portal-sphere-four" aria-hidden="true"></div>
       <div class="pointer-events-none absolute -left-10 -top-10 z-0 h-80 w-80 animate-blob rounded-full bg-teal-300/30 blur-3xl"></div>
       <div class="animation-delay-2 pointer-events-none absolute -right-10 bottom-0 z-0 h-72 w-72 animate-blob rounded-full bg-cyan-200/25 blur-3xl"></div>
 
       <div class="relative z-10 mx-auto mt-1 flex w-full max-w-2xl flex-col items-center text-center">
-        <h1 class="mb-1.5 text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-sm sm:text-3xl lg:text-[34px]">Bienvenidos a<br /><span class="drop-shadow-md">Nordvital IPS</span></h1>
+        <h1 class="mb-1.5 text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-sm sm:text-3xl lg:text-[56px]">Bienvenidos a<br /><span class="drop-shadow-md">Nordvital IPS</span></h1>
         <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/20 px-3 py-1 text-sm font-medium tracking-wide text-white shadow-sm backdrop-blur-md">
           <svg class="h-3.5 w-3.5 text-cyan-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
           <span class="font-mono text-xs tracking-widest sm:text-sm"><Time /></span>
@@ -35,7 +41,7 @@ import faviconPng from "../assets/favicon.png";
       </div>
 
       <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center">
-        <h2 class="mb-1.5 text-sm font-extrabold tracking-tight text-white/90 sm:text-base">Enlaces de interés</h2>
+        <h2 class="mb-1.5 text-sm font-extrabold tracking-tight text-white/90 sm:text-3xl">Enlaces de interés</h2>
         <div class="grid w-full grid-cols-5 gap-1.5" data-purpose="interest-links-grid">
           <AppCard title="ADRESS" icon="ADRESS" bgColor="glass-sub-card" url="https://www.adres.gov.co/consulte-su-eps" />
           <AppCard title="REPS" icon="REPS" bgColor="glass-sub-card" url="https://prestadores.minsalud.gov.co/habilitacion/" />
@@ -74,7 +80,7 @@ import faviconPng from "../assets/favicon.png";
           <AppCard title="Facturación" icon="Facturación" bgColor="eps-card eps-compensar" url="https://consorcio.elyon.com.co/" />
           <AppCard title="Portal SAIA" icon="Portal SAIA" bgColor="eps-card eps-compensar" url="https://pqrscompensarsalud.netsaia.com/views/login/login.php" />
           <AppCard title="Portal SICU" icon="Portal SICU" bgColor="eps-card eps-compensar" url="https://sicu.compensarsalud.com/SicuWebResponsive/login" />
-          <AppCard title="Portal RISS" icon="Portal RISS" bgColor="eps-card eps-compensar" url="https://cs.compensar.com/CherwellPortal/GPS?_=4c62b036#0" />
+          <AppCard title="Portal RISS" icon="Portal RISS" bgColor="eps-card eps-compensar" url="https://cs.compensarsalud.com/CherwellPortal/GPS?_=4c62b036#0" />
           <AppCard title="Transacciones en Línea" icon="Transacciones en Línea" bgColor="eps-card eps-compensar" url="https://corporativo.compensar.com/salud/transacciones" />
           <AppCard title="Plataforma de Aprendizaje" icon="Plataforma de Aprendizaje" bgColor="eps-card eps-compensar" url="https://proveedoressalud.clapuser.com/" />
           <AppCard title="Sigires" icon="Sigires" bgColor="eps-card eps-compensar" url="https://compensar.sigires.co/" />
